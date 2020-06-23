@@ -1,4 +1,7 @@
+export const PRICE_HIGH_TO_LOW = 'priceHighToLow';
+export const PRICE_LOW_TO_HIGH = 'priceLowToHigh';
+
 export const SORT_METHODS = {
-  priceHighToLow: 'Highest Price',
-  priceLowToHigh: 'Lowest Price',
+  [PRICE_HIGH_TO_LOW]: 'Highest Price',
+  [PRICE_LOW_TO_HIGH]: 'Lowest Price',
 }
