@@ -34,3 +34,12 @@ Anyway, this app creation process and planning took about an hour. I will be rec
 For context, one pomodoro is about 25-30 minutes, and then I take a 5-15 minute break depending on the schedule.
 
 I look forward to starting the code challenge tomorrow.
+
+### Day 1 - Morning
+I have completed the basic app structure with the components that I need, using a state hook in the root of the application and the context API to update and share the state amongst components. I'm sure there's a better way to do this, so I'll prioritise looking into it later. All things considered, I'm pretty happy to have gotten this far as this is the first time I'm using Context. It's a classic example of "once you learn it, it's not that difficult".
+
+Next, I'm going to get the API call working so I can get all the products and display them in the ProductList with ProductTile components. After that's looking good, I plan to configure the sorting methods. By the end of the day, I hope to have completed most of the styling.
+
+At this rate, I'll probably make a start on the unit tests tomorrow.
+
+#### Time spent so far: 4 pomodoros (~2 hours)
