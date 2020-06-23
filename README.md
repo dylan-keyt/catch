@@ -43,3 +43,12 @@ Next, I'm going to get the API call working so I can get all the products and di
 At this rate, I'll probably make a start on the unit tests tomorrow.
 
 #### Time spent so far: 4 pomodoros (~2 hours)
+
+### Day 1 - Afternoon
+I encountered a tricky CORS issue that was preventing me from proceeding, so after some searching I found a temporary, non-production resolution involving a proxy which lets me use the data from the Catch endpoint.
+
+Unfortunately, I had a lot of disruptions this afternoon so I wasn't able to complete as much as I'd liked to today. I have reached the recommended 4 hour capacity of this coding challenge, but was told that there is no time limit and I knew I'd need more time anyway.
+
+Tomorrow I will focus on styling and code cleanup, then start the unit tests if I have time.
+
+#### Time spent so far: 8 pomodoros (~4 hours)
