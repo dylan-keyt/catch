@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './components/header'
+import { SortProvider } from './context/sortContext'
+import { SORT_METHODS } from './constants/sortMethods'
+import ProductList from './components/product-list';
 
-function App() {
+const App = () => {
+  const [sortMethod, setSortMethod] = useState(Object.keys(SORT_METHODS)[0])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SortProvider value={setSortMethod}>
+        <Header />
+      </SortProvider>
+      <ProductList sortMethod={sortMethod} />
     </div>
   );
 }
