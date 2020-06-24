@@ -52,3 +52,10 @@ Unfortunately, I had a lot of disruptions this afternoon so I wasn't able to com
 Tomorrow I will focus on styling and code cleanup, then start the unit tests if I have time.
 
 #### Time spent so far: 8 pomodoros (~4 hours)
+
+### Day 2 - Morning
+I decided to start on the unit tests as they would be more time consuming, and as I was going through the various files I did some minor refactoring. When I arrived at the tests for SortContext, it became clear to me that what I had done was a hack and not the right way to use Context. So I read [this article](https://kentcdodds.com/blog/how-to-use-react-context-effectively), followed the examples and created a much more robust solution. There's more code which means more tests will be required, and it's apparent I need to do this for storing the product data as well. But overall, this is a much better structure for centralising app-centric data that will be shared across components. As a bonus, I learnt of a much better way of using Context and the action/reducer pattern is very familiar to me which made it a bit easier to pick up.
+
+This afternoon, I will refactor the product and sorting method, then continue on with unit tests.
+
+#### Time spent so far: 12 pomodoros (~6 hours)
