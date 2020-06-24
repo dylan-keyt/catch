@@ -1,3 +1,5 @@
+export const SET_SORT_METHOD = 'SET_SORT_METHOD'
+
 export const PRICE_HIGH_TO_LOW = 'priceHighToLow';
 export const PRICE_LOW_TO_HIGH = 'priceLowToHigh';
 

@@ -1,8 +1,17 @@
 import React from 'react'
-import SortContext from '../../context/sort'
+import { useSortDispatch } from '../../context/sort'
+import { SET_SORT_METHOD } from '../../constants/sortMethods'
 
 const SortBy = ({ options }) => {
-  const handleOnChange = React.useContext(SortContext)
+  const dispatch = useSortDispatch()
+
+  const handleOnChange = sortMethod => {
+    dispatch({
+      type: SET_SORT_METHOD,
+      sortMethod
+    })
+  }
+
   return (
     <React.Fragment>
       <select onChange={e => handleOnChange(e.target.value)}>

@@ -3,8 +3,10 @@ import ProductTile from '../product-tile'
 import { getProducts } from '../../api/product'
 import { PRICE_LOW_TO_HIGH, PRICE_HIGH_TO_LOW } from '../../constants/sortMethods';
 import { sortPriceLowToHigh, sortPriceHighToLow } from '../../utils/product';
+import { useSortState } from '../../context/sort';
 
-const ProductList = ({ sortMethod }) => {
+const ProductList = () => {
+  const { sortMethod } = useSortState()
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
