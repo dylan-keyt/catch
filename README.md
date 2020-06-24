@@ -54,8 +54,17 @@ Tomorrow I will focus on styling and code cleanup, then start the unit tests if 
 #### Time spent so far: 8 pomodoros (~4 hours)
 
 ### Day 2 - Morning
-I decided to start on the unit tests as they would be more time consuming, and as I was going through the various files I did some minor refactoring. When I arrived at the tests for SortContext, it became clear to me that what I had done was a hack and not the right way to use Context. So I read [this article](https://kentcdodds.com/blog/how-to-use-react-context-effectively), followed the examples and created a much more robust solution. There's more code which means more tests will be required, and it's apparent I need to do this for storing the product data as well. But overall, this is a much better structure for centralising app-centric data that will be shared across components. As a bonus, I learnt of a much better way of using Context and the action/reducer pattern is very familiar to me which made it a bit easier to pick up.
+I decided to start on the unit tests as they would be more time consuming, and as I was going through the various files I did some minor refactoring. When I arrived at the tests for SortContext, it became clear to me that what I had done was a hack and not the right way to use Context. So I read [this article](https://kentcdodds.com/blog/how-to-use-react-context-effectively), followed the examples and created a much more robust solution.
+
+There's more code which means more tests will be required, and it's apparent I need to do this for storing the product data as well. But overall, this is a much better structure for centralising app-centric data that will be shared across components. As a bonus, I learnt of a much better way of using Context and the action/reducer pattern is very familiar to me which made it a bit easier to pick up.
 
 This afternoon, I will refactor the product and sorting method, then continue on with unit tests.
 
 #### Time spent so far: 12 pomodoros (~6 hours)
+
+### Day 2 - Afternoon
+Refactor complete. I learnt more about custom hooks and how/where they can be used. The project structure is now in a good state, so it's just a matter of adding all remaining unit tests and CSS styles, followed by a final code cleanup.
+
+I expect to keep working on this for the next couple of days. This project has taken longer than I anticipated, but it's been a good exercise for learning and practicing things I haven't used before. Even the methodology behind react-testing-library has been good to pick up.
+
+#### Time spent so far: 16 pomodoros (~8 hours)
