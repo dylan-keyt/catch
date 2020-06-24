@@ -71,3 +71,11 @@ Refactor complete. I learnt more about custom hooks and how/where they can be us
 I expect to keep working on this for the next couple of days. This project has taken longer than I anticipated, but it's been a good exercise for learning and practicing things I haven't used before. Even the methodology behind react-testing-library has been good to pick up.
 
 #### Time spent so far: 16 pomodoros (~8 hours)
+
+### Day 2 - Evening
+
+A shorter session to round off the day. I was able to add some more unit tests, which means there won't be much left to do tomorrow.
+
+At this stage, I'm confident that I will finish the tests tomorrow morning, and then I can move onto the CSS.
+
+#### Time spent so far: 18 pomodoros (~9 hours)
