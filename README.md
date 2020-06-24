@@ -73,9 +73,13 @@ I expect to keep working on this for the next couple of days. This project has t
 #### Time spent so far: 16 pomodoros (~8 hours)
 
 ### Day 2 - Evening
-
 A shorter session to round off the day. I was able to add some more unit tests, which means there won't be much left to do tomorrow.
 
 At this stage, I'm confident that I will finish the tests tomorrow morning, and then I can move onto the CSS.
 
 #### Time spent so far: 18 pomodoros (~9 hours)
+
+### Day 3 - Night
+I didn't set another pomodoro so this time is unmarked, but I probably spent an hour or so doing some admin work.
+
+I decided to use eslint so I wouldn't have to worry about formatting everything at the last minute. After reviewing the specifications again, it seems that I missed a requirement about the metadata appearing in the header. This won't be difficult as I've already set up the API call, just need to handle it and add tests of course.
