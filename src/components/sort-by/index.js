@@ -1,5 +1,5 @@
 import React from 'react'
-import SortContext from '../../context/sortContext'
+import SortContext from '../../context/sort'
 
 const SortBy = ({ options }) => {
   const handleOnChange = React.useContext(SortContext)
