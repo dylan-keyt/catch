@@ -2,17 +2,14 @@ import React from 'react'
 import DropDown from '../drop-down'
 import { SORT_METHODS } from '../../constants/sort'
 import { useSortDispatch } from '../../context/sort'
-import { SET_SORT_METHOD } from '../../constants/sort'
 import { CATCH_LOGO_URL } from '../../constants/url'
+import { setSortMethod } from '../../actions/sort'
 
 const Header = () => {
   const dispatch = useSortDispatch()
 
   const handleOnChange = sortMethod => {
-    dispatch({
-      type: SET_SORT_METHOD,
-      sortMethod
-    })
+    setSortMethod({ dispatch, sortMethod })
   }
 
   return (

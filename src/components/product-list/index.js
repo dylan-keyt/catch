@@ -1,27 +1,24 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import ProductTile from '../product-tile'
-import { getProducts } from '../../api/product'
-import { PRICE_LOW_TO_HIGH, PRICE_HIGH_TO_LOW } from '../../constants/sort';
-import { sortPriceLowToHigh, sortPriceHighToLow } from '../../utils/product';
+import { getProducts, sortProducts } from '../../actions/product'
+import { useProductState, useProductDispatch } from '../../context/product';
 import { useSortState } from '../../context/sort';
 
 const ProductList = () => {
-  const { sortMethod } = useSortState()
-  const [products, setProducts] = useState([]);
+  const dispatch = useProductDispatch();
+  const { products } = useProductState();
+  const { sortMethod } = useSortState();
 
   useEffect(() => {
-    async function fetchData() {
-      const products = await getProducts()
-      setProducts(products
-        .sort(sortMethod === PRICE_LOW_TO_HIGH
-        ? sortPriceLowToHigh
-        : sortMethod === PRICE_HIGH_TO_LOW
-          ? sortPriceHighToLow
-          : null
-      ))
+    const fetchProducts = async () => {
+      await getProducts({ dispatch })
     }
-    fetchData();
-  }, [sortMethod])
+    fetchProducts();
+  }, [dispatch])
+
+  useEffect(() => {
+    sortProducts({ dispatch, products, sortMethod });
+  }, [dispatch, products, sortMethod])
 
   return (
     // TODO: grid styles
