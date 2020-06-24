@@ -19,6 +19,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Run `npm test` to launch the test runner.
 2. Once the menu appears in the console, press `a` to run all tests.
 
+## Design decisions and implementation
+For tests, I found a package called [jest-fetch-mock](https://www.npmjs.com/package/jest-fetch-mock) which will mock the fetch API in tests by default. I did this for ease of use, and we probably want to be doing this in tests rather than calling the actual endpoints anyway.
+
 ## Development Log
 ### Day 0 - Morning
 I took some time to prepare my working environment for this project.
