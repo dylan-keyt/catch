@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import ProductTile from '../product-tile'
-import { getProducts, sortProducts } from '../../actions/product'
+import ProductTile from '../product-tile';
+import { getProducts, sortProducts } from '../../actions/product';
 import { useProductState, useProductDispatch } from '../../context/product';
 import { useSortState } from '../../context/sort';
 
@@ -11,21 +11,21 @@ const ProductList = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      await getProducts({ dispatch })
-    }
+      await getProducts({ dispatch });
+    };
     fetchProducts();
-  }, [dispatch])
+  }, [dispatch]);
 
   useEffect(() => {
     sortProducts({ dispatch, products, sortMethod });
-  }, [dispatch, products, sortMethod])
+  }, [dispatch, products, sortMethod]);
 
   return (
     // TODO: grid styles
     <div className="ProductList">
-      {products.map(product => <ProductTile product={product} />)}
+      {products.map((product) => <ProductTile product={product} />)}
     </div>
   );
-}
+};
 
 export default ProductList;

@@ -1,10 +1,10 @@
-import React from 'react'
-import SortProvider, { useSortState, useSortDispatch } from './'
-import { render, fireEvent } from '@testing-library/react'
-import { PRICE_HIGH_TO_LOW, SET_SORT_METHOD } from '../../constants/sort'
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import SortProvider, { useSortState, useSortDispatch } from '.';
+import { PRICE_HIGH_TO_LOW, SET_SORT_METHOD } from '../../constants/sort';
 
-describe("sort context", () => {
-  describe("SortProvider", () => {
+describe('sort context', () => {
+  describe('SortProvider', () => {
     const TestConsumerComponent = ({ action }) => {
       const { sortMethod } = useSortState();
       const dispatch = useSortDispatch();
@@ -12,86 +12,86 @@ describe("sort context", () => {
       return <button onClick={() => dispatch(action)}>{sortMethod}</button>;
     };
 
-    test("should have default state value", () => {
+    test('should have default state value', () => {
       const { getByRole } = render(
         <SortProvider>
           <TestConsumerComponent />
-        </SortProvider>
+        </SortProvider>,
       );
-      expect(getByRole("button")).toHaveTextContent(PRICE_HIGH_TO_LOW);
+      expect(getByRole('button')).toHaveTextContent(PRICE_HIGH_TO_LOW);
     });
 
-    test("should allow the dispatching of actions", () => {
+    test('should allow the dispatching of actions', () => {
       const action = {
         type: SET_SORT_METHOD,
-        sortMethod: "hello",
+        sortMethod: 'hello',
       };
       const { getByRole } = render(
         <SortProvider>
           <TestConsumerComponent action={action} />
-        </SortProvider>
+        </SortProvider>,
       );
 
       fireEvent(
-        getByRole("button"),
-        new MouseEvent("click", {
+        getByRole('button'),
+        new MouseEvent('click', {
           bubbles: true,
           cancelable: true,
-        })
+        }),
       );
-      expect(getByRole("button")).toHaveTextContent("hello");
+      expect(getByRole('button')).toHaveTextContent('hello');
     });
 
-    test("should throw an error when invalid action is dispatched", () => {
+    test('should throw an error when invalid action is dispatched', () => {
       const action = {
-        type: "NOT_VALID",
+        type: 'NOT_VALID',
       };
       const { getByRole } = render(
         <SortProvider>
           <TestConsumerComponent action={action} />
-        </SortProvider>
+        </SortProvider>,
       );
 
       try {
         fireEvent(
-          getByRole("button"),
-          new MouseEvent("click", {
+          getByRole('button'),
+          new MouseEvent('click', {
             bubbles: true,
             cancelable: true,
-          })
+          }),
         );
       } catch (err) {
-        expect(err.message).toEqual("Unhandled action type: NOT_VALID");
+        expect(err.message).toEqual('Unhandled action type: NOT_VALID');
       }
     });
 
-    describe("useSortState", () => {
+    describe('useSortState', () => {
       const TestComponent = () => {
         const { sortMethod } = useSortState();
         return <div>{sortMethod}</div>;
       };
-      test("should throw an error if component is not rendered inside SortProvider", () => {
+      test('should throw an error if component is not rendered inside SortProvider', () => {
         try {
           render(<TestComponent />);
         } catch (err) {
           expect(err.message).toEqual(
-            "useSortState must be used within a SortProvider"
+            'useSortState must be used within a SortProvider',
           );
         }
       });
     });
 
-    describe("useSortDispatch", () => {
+    describe('useSortDispatch', () => {
       const TestComponent = () => {
         const dispatch = useSortDispatch();
         return <button onClick={() => dispatch()}>Hello</button>;
       };
-      test("should throw an error if component is not rendered inside SortProvider", () => {
+      test('should throw an error if component is not rendered inside SortProvider', () => {
         try {
           render(<TestComponent />);
         } catch (err) {
           expect(err.message).toEqual(
-            "useSortDispatch must be used within a SortProvider"
+            'useSortDispatch must be used within a SortProvider',
           );
         }
       });

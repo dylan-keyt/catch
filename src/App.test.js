@@ -8,4 +8,4 @@ describe('app', () => {
     const appElement = getByTestId('App');
     expect(appElement).toBeInTheDocument();
   });
-})
+});
