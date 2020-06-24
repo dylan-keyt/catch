@@ -80,6 +80,6 @@ At this stage, I'm confident that I will finish the tests tomorrow morning, and 
 #### Time spent so far: 18 pomodoros (~9 hours)
 
 ### Day 3 - Night
-I didn't set another pomodoro so this time is unmarked, but I probably spent an hour or so doing some admin work.
-
 I decided to use eslint so I wouldn't have to worry about formatting everything at the last minute. After reviewing the specifications again, it seems that I missed a requirement about the metadata appearing in the header. This won't be difficult as I've already set up the API call, just need to handle it and add tests of course.
+
+#### Time spent so far: 20 pomodoros (~10 hours)
