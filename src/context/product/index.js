@@ -47,5 +47,5 @@ const useProductDispatch = () => {
   return context
 }
 
-export { useProductState, useProductDispatch }
+export { productReducer, useProductState, useProductDispatch };
 export default ProductProvider
