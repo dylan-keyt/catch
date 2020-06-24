@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import ProductTile from '../product-tile'
 import { getProducts } from '../../api/product'
-import { PRICE_LOW_TO_HIGH, PRICE_HIGH_TO_LOW } from '../../constants/sortMethods';
+import { PRICE_LOW_TO_HIGH, PRICE_HIGH_TO_LOW } from '../../constants/sort';
 import { sortPriceLowToHigh, sortPriceHighToLow } from '../../utils/product';
 import { useSortState } from '../../context/sort';
 

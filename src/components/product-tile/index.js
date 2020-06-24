@@ -5,9 +5,9 @@ const ProductTile = ({ product }) => {
   return (
     <div className="ProductTile" id={id}>
       <img src={imageUrl} alt={name}/>
-      { !quantityAvailable && <div>Sold out</div> }
+      { !quantityAvailable && <div>Sold Out</div> }
       <div>{name}</div>
-      <div>{retailPrice}</div>
+      { !!retailPrice && <div>{retailPrice}</div> }
       <div>{salePrice}</div>
     </div>
   );

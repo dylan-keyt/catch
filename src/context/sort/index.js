@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { SORT_METHODS, SET_SORT_METHOD } from '../../constants/sortMethods'
+import { SORT_METHODS, SET_SORT_METHOD } from '../../constants/sort'
 
 const SortStateContext = React.createContext()
 const SortDispatchContext = React.createContext()

@@ -1,12 +1,24 @@
 import React from 'react'
-import SortBy from '../sort-by'
-import { SORT_METHODS } from '../../constants/sortMethods'
+import DropDown from '../drop-down'
+import { SORT_METHODS } from '../../constants/sort'
+import { useSortDispatch } from '../../context/sort'
+import { SET_SORT_METHOD } from '../../constants/sort'
+import { CATCH_LOGO_URL } from '../../constants/url'
 
 const Header = () => {
+  const dispatch = useSortDispatch()
+
+  const handleOnChange = sortMethod => {
+    dispatch({
+      type: SET_SORT_METHOD,
+      sortMethod
+    })
+  }
+
   return (
     <header>
-      <img src='https://s.catch.com.au/static/catch/images/logo-8b0ef96c7b.svg' alt='Catch'/>
-      <SortBy options={SORT_METHODS} />
+      <img src={CATCH_LOGO_URL} alt='Catch'/>
+      <DropDown name={'Sort By'} options={SORT_METHODS} handleOnChange={handleOnChange} />
     </header>
   )
 }
