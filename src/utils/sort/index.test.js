@@ -1,6 +1,6 @@
-import { sortPriceHighToLow, sortPriceLowToHigh } from './'
+import { sortPriceHighToLow, sortPriceLowToHigh } from '.'
 
-describe('product utils', () => {
+describe('sort utils', () => {
   const cheapProduct = {
     name: "Havaianas Top Thongs - Black",
     salePrice: 1499,
