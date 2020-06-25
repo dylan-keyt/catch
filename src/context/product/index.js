@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react'
+import PropTypes from 'prop-types'
+
 import {
 	FETCH_PRODUCTS,
 	SET_METADATA,
@@ -42,6 +44,10 @@ const ProductProvider = ({ children }) => {
 			</ProductDispatchContext.Provider>
 		</ProductStateContext.Provider>
 	)
+}
+
+ProductProvider.propTypes = {
+	children: PropTypes.node
 }
 
 const useProductState = () => {

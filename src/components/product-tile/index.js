@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const ProductTile = ({ product }) => {
 	const {
@@ -13,6 +14,10 @@ const ProductTile = ({ product }) => {
 			<div>{salePrice}</div>
 		</div>
 	)
+}
+
+ProductTile.propTypes = {
+	product: PropTypes.object.isRequired
 }
 
 export default ProductTile

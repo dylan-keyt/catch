@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react'
+import PropTypes from 'prop-types'
+
 import { SORT_METHODS, SET_SORT_METHOD } from '../../constants/sort'
 
 const SortStateContext = React.createContext()
@@ -24,6 +26,10 @@ const SortProvider = ({ children }) => {
 			</SortDispatchContext.Provider>
 		</SortStateContext.Provider>
 	)
+}
+
+SortProvider.propTypes = {
+	children: PropTypes.node,
 }
 
 const useSortState = () => {

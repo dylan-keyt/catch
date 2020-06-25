@@ -1,17 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { render, fireEvent } from '@testing-library/react'
 import SortProvider, { useSortState, useSortDispatch } from '.'
 import { PRICE_HIGH_TO_LOW, SET_SORT_METHOD } from '../../constants/sort'
 
+const TestConsumerComponent = ({ action }) => {
+	const { sortMethod } = useSortState()
+	const dispatch = useSortDispatch()
+
+	return <button onClick={() => dispatch(action)}>{sortMethod}</button>
+}
+
+TestConsumerComponent.propTypes = {
+	action: PropTypes.object,
+}
+
 describe('sort context', () => {
 	describe('SortProvider', () => {
-		const TestConsumerComponent = ({ action }) => {
-			const { sortMethod } = useSortState()
-			const dispatch = useSortDispatch()
-
-			return <button onClick={() => dispatch(action)}>{sortMethod}</button>
-		}
-
 		test('should have default state value', () => {
 			const { getByRole } = render(
 				<SortProvider>

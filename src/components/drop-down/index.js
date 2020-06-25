@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const DropDown = ({ id, name, options, handleOnChange }) => (
 	<>
@@ -9,5 +10,12 @@ const DropDown = ({ id, name, options, handleOnChange }) => (
 		</select>
 	</>
 )
+
+DropDown.propTypes = {
+	id: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	options: PropTypes.object.isRequired,
+	handleOnChange: PropTypes.func.isRequired,
+}
 
 export default DropDown

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { render, fireEvent } from '@testing-library/react'
 import ProductProvider, { productReducer, useProductState, useProductDispatch } from '.'
 import {
@@ -8,22 +9,26 @@ import {
 	SET_METADATA,
 } from '../../constants/product'
 
+const TestConsumerComponent = ({ action }) => {
+	const { status, products } = useProductState()
+	const dispatch = useProductDispatch()
+
+	return (
+		<>
+			{products.map((product) => (
+				<div key={product.id}>{product.name}</div>
+			))}
+			<button onClick={() => dispatch(action)}>{status}</button>
+		</>
+	)
+}
+
+TestConsumerComponent.propTypes = {
+	action: PropTypes.object
+}
+
 describe('product context', () => {
 	describe('ProductProvider', () => {
-		const TestConsumerComponent = ({ action }) => {
-			const { status, products } = useProductState()
-			const dispatch = useProductDispatch()
-
-			return (
-				<>
-					{products.map((product) => (
-						<div key={product.id}>{product.name}</div>
-					))}
-					<button onClick={() => dispatch(action)}>{status}</button>
-				</>
-			)
-		}
-
 		test('should allow the dispatching of actions', () => {
 			const action = {
 				type: SET_PRODUCTS,

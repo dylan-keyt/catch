@@ -1,3 +1,4 @@
+/* global fetchMock */
 import { enableFetchMocks } from 'jest-fetch-mock'
 import { getProducts, sortProducts } from './'
 import { FETCH_PRODUCTS, SET_METADATA, SET_PRODUCTS, FETCH_PRODUCTS_FAILED } from '../../constants/product'
