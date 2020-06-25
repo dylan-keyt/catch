@@ -20,7 +20,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. Once the menu appears in the console, press `a` to run all tests.
 
 ## Design decisions and implementation
-For tests, I found a package called [jest-fetch-mock](https://www.npmjs.com/package/jest-fetch-mock) which will mock the fetch API in tests by default. I did this for ease of use, and we probably want to be doing this in tests rather than calling the actual endpoints anyway.
+I originally was going to keep the state management implementation very simple and just use a root state in the App component, but this quickly proved to unscalable and clunky; callback hell. After hearing about Context many times in the past and how it can be used as a replacement for libraries such as Redux, I decided to use it for the first time in this project. I researched and learnt about good design patterns [from this article](https://kentcdodds.com/blog/how-to-use-react-context-effectively), and was able to create context files for product and sort, using them throughout the application.
+
+It was my first time using react-testing-library, too. For ease of use, I found a package called [jest-fetch-mock](https://www.npmjs.com/package/jest-fetch-mock) which will mock the fetch API in tests by default. We probably want to be doing this in tests rather than attempting to call the actual endpoints anyway.
+
+If I could improve a single test, it would be the test for ProductList. I wanted to take advantage of react-testing-library and the Context API, and render some sample ProductTile components that I expect `toBeInTheDocument`. Unfortunately, I wasn't able to do this in a timely manner, and it's likely due to a flawed component structure. As a compromise, I mocked the product actions and checked that they were being called as per `useEffect`. So at least the test was able to test something useful.
+
+The DropDown component is an example of a generic component that could be imported from a component library and have all behaviour and relevant data passed down as props.
 
 ## Development Log
 ### Day 0 - Morning
@@ -90,3 +96,10 @@ I spent way too long on writing a good test for ProductList. I understand that t
 I'll proceed with the unit tests, and add the metadata handler when I get up to that part.
 
 #### Time spent so far: 24 pomodoros (~12 hours)
+
+### Day 4 - Afternoon
+I'm relieved to have finished the unit tests, and can now proceed with confidence. It gave me a chance to perform some refactors across the application, both big and small. Looking back, I can see some improvements that can be made throughout such as moving the metadata handler into its own context, or remove the sort context as it's just holding a single value. I'll keep them as-is for this project as it ended up being a good learning experience and opportunity to work with custom hooks.
+
+The main part to work on now involves styling the application. Hopefully I will finish this tomorrow and submit the project in time for the weekend.
+
+#### Time spent so far: 30 pomodoros (~15 hours)
