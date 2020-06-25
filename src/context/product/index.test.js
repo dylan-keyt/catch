@@ -16,7 +16,7 @@ describe('product context', () => {
 			return (
 				<>
 					{products.map((product) => (
-						<div>{product.name}</div>
+						<div key={product.id}>{product.name}</div>
 					))}
 					<button onClick={() => dispatch(action)}>{status}</button>
 				</>

@@ -21,9 +21,8 @@ const ProductList = () => {
 	}, [dispatch, products, sortMethod])
 
 	return (
-	// TODO: grid styles
 		<div className="ProductList">
-			{products.map((product) => <ProductTile product={product} />)}
+			{products.map((product) => <ProductTile product={product} key={product.id} />)}
 		</div>
 	)
 }
