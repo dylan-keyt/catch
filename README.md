@@ -83,3 +83,10 @@ At this stage, I'm confident that I will finish the tests tomorrow morning, and 
 I decided to use eslint so I wouldn't have to worry about formatting everything at the last minute. After reviewing the specifications again, it seems that I missed a requirement about the metadata appearing in the header. This won't be difficult as I've already set up the API call, just need to handle it and add tests of course.
 
 #### Time spent so far: 20 pomodoros (~10 hours)
+
+### Day 4 - Morning
+I spent way too long on writing a good test for ProductList. I understand that the philosophy behind react-testing-library is just to test what you need, whatever's most useful to the user. I was having a lot of trouble with the async calls to getProducts, and unfortunately had to cut it short and mock those calls instead. In a real-world scenario, I would just ask someone about the best way to test what I have written.
+
+I'll proceed with the unit tests, and add the metadata handler when I get up to that part.
+
+#### Time spent so far: 24 pomodoros (~12 hours)
