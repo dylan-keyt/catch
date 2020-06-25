@@ -14,6 +14,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:suppress-errors": "react-scripts test --silent",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --fix src"
   },
