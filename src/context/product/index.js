@@ -1,5 +1,10 @@
 import React, { useReducer } from 'react'
-import { FETCH_PRODUCTS, SET_PRODUCTS, FETCH_PRODUCTS_FAILED } from '../../constants/product'
+import {
+	FETCH_PRODUCTS,
+	SET_METADATA,
+	SET_PRODUCTS,
+	FETCH_PRODUCTS_FAILED,
+} from '../../constants/product'
 
 const ProductStateContext = React.createContext()
 const ProductDispatchContext = React.createContext()
@@ -8,8 +13,11 @@ const productReducer = (state, action) => {
 	switch (action.type) {
 	case FETCH_PRODUCTS:
 		return { ...state, status: 'fetching' }
+	case SET_METADATA: {
+		return { ...state, metadata: action.metadata }
+	}
 	case SET_PRODUCTS: {
-		return { status: 'success', products: action.products }
+		return { ...state, status: 'success', products: action.products }
 	}
 	case FETCH_PRODUCTS_FAILED: {
 		return { ...state, status: 'failed', error: action.error }
@@ -21,7 +29,12 @@ const productReducer = (state, action) => {
 }
 
 const ProductProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(productReducer, { status: null, products: [] })
+	const [state, dispatch] = useReducer(productReducer, {
+		status: null,
+		metadata: {},
+		products: [],
+		error: null
+	})
 	return (
 		<ProductStateContext.Provider value={state}>
 			<ProductDispatchContext.Provider value={dispatch}>

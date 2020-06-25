@@ -5,6 +5,7 @@ import {
 	FETCH_PRODUCTS,
 	SET_PRODUCTS,
 	FETCH_PRODUCTS_FAILED,
+	SET_METADATA,
 } from '../../constants/product'
 
 describe('product context', () => {
@@ -73,13 +74,34 @@ describe('product context', () => {
 	describe('productReducer', () => {
 		const state = {
 			status: null,
+			metadata: {},
 			products: [],
+			error: null,
 		}
 		test('should return the appropriate state for FETCH_PRODUCTS', () => {
 			const action = { type: FETCH_PRODUCTS }
 			expect(productReducer(state, action)).toEqual({
 				status: 'fetching',
+				metadata: {},
 				products: [],
+				error: null,
+			})
+		})
+		test('should return the appropriate state for SET_METADATA', () => {
+			const action = {
+				type: SET_METADATA,
+				metadata: {
+					query: 'best sellers',
+					total: 102,
+					page: 1,
+					pages: 3,
+				},
+			}
+			expect(productReducer(state, action)).toEqual({
+				status: null,
+				metadata: action.metadata,
+				products: [],
+				error: null,
 			})
 		})
 		test('should return the appropriate state for SET_PRODUCTS', () => {
@@ -89,7 +111,9 @@ describe('product context', () => {
 			}
 			expect(productReducer(state, action)).toEqual({
 				status: 'success',
-				products: [{ name: 'product1' }, { name: 'product2' }],
+				metadata: {},
+				products: action.products,
+				error: null,
 			})
 		})
 		test('should return the appropriate state for FETCH_PRODUCTS_FAILED', () => {
@@ -99,6 +123,7 @@ describe('product context', () => {
 			}
 			expect(productReducer(state, action)).toEqual({
 				status: 'failed',
+				metadata: {},
 				products: [],
 				error: '🤷',
 			})
