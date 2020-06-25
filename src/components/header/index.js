@@ -23,6 +23,7 @@ const Header = () => {
 				Page {page} of {pages}
 			</div>
 			<DropDown
+				id='sort-by'
 				name='Sort By'
 				options={SORT_METHODS}
 				handleOnChange={handleOnChange}

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DropDown = ({ name, options, handleOnChange }) => (
+const DropDown = ({ id, name, options, handleOnChange }) => (
 	<>
-		<div>{name}</div>
-		<select onChange={(e) => handleOnChange(e.target.value)}>
+		<label htmlFor={id}>{name}</label>
+		<select id={id} aria-labelledby={id} onChange={(e) => handleOnChange(e.target.value)}>
 			{ Object.entries(options)
 				.map(([value, displayName]) => <option key={value} value={value}>{displayName}</option>)}
 		</select>
