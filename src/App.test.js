@@ -1,11 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { render } from '@testing-library/react'
+import App from './App'
 
 describe('app', () => {
-  test('renders the root app component', () => {
-    const { getByTestId } = render(<App />);
-    const appElement = getByTestId('App');
-    expect(appElement).toBeInTheDocument();
-  });
-});
+	test('renders the root app component and its children', () => {
+		const { getByAltText} = render(<App />)
+		const headerLogo = getByAltText('Catch')
+		expect(headerLogo).toBeInTheDocument()
+	})
+})
