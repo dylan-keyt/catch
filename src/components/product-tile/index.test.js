@@ -17,8 +17,8 @@ describe('ProductTile', () => {
 		const image = getByAltText(product.name)
 		const soldOut = queryByText('Sold Out')
 		const name = getByText(product.name)
-		const retailPrice = getByText('5000')
-		const salePrice = getByText('3145')
+		const retailPrice = getByText('A$50.00')
+		const salePrice = getByText('A$31.45')
 
 		expect(image).toBeInTheDocument()
 		expect(soldOut).not.toBeInTheDocument()
@@ -54,7 +54,7 @@ describe('ProductTile', () => {
 		}
 
 		const { queryByText } = render(<ProductTile product={product} />)
-		const retailPrice = queryByText('0')
+		const retailPrice = queryByText('A$0.00')
 
 		expect(retailPrice).not.toBeInTheDocument()
 	})

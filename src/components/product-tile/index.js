@@ -1,11 +1,13 @@
 import React from 'react'
 import './styles.css'
 import PropTypes from 'prop-types'
+import { formatPriceToAUD } from '../../utils/price'
 
 const ProductTile = ({ product }) => {
 	const {
 		id, name, salePrice, retailPrice, imageUrl, quantityAvailable,
 	} = product
+
 	return (
 		<div className='ProductTile' id={id}>
 			<div className='ProductTile-image-wrapper'>
@@ -17,9 +19,13 @@ const ProductTile = ({ product }) => {
 			<div className='ProductTile-details'>
 				<div className='ProductTile-name'>{name}</div>
 				{!!retailPrice && (
-					<div className='ProductTile-retail-price'>{retailPrice}</div>
+					<div className='ProductTile-retail-price'>
+						{formatPriceToAUD(retailPrice)}
+					</div>
 				)}
-				<div className='ProductTile-sale-price'>{salePrice}</div>
+				<div className='ProductTile-sale-price'>
+					{formatPriceToAUD(salePrice)}
+				</div>
 			</div>
 		</div>
 	)
