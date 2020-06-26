@@ -15,7 +15,9 @@ const Header = () => {
 
 	return (
 		<header>
-			<img src={logo} alt='Catch' />
+			<div className='LogoWrapper'>
+				<img className='Logo' src={logo} alt='Catch' />
+			</div>
 			<DropDown
 				id='sort-by'
 				name='Sort By'
