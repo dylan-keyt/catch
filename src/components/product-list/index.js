@@ -3,6 +3,7 @@ import ProductTile from '../product-tile'
 import { getProducts, sortProducts } from '../../actions/product'
 import { useProductState, useProductDispatch } from '../../context/product'
 import { useSortState } from '../../context/sort'
+import ProductListHeader from '../product-list-header'
 
 const ProductList = () => {
 	const dispatch = useProductDispatch()
@@ -21,7 +22,8 @@ const ProductList = () => {
 	}, [dispatch, products, sortMethod])
 
 	return (
-		<div className="ProductList">
+		<div className="ProductListContainer">
+			<ProductListHeader />
 			{products.map((product) => <ProductTile product={product} key={product.id} />)}
 		</div>
 	)

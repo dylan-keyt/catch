@@ -1,14 +1,15 @@
 import React from 'react'
+import './styles.css'
 import PropTypes from 'prop-types'
 
 const DropDown = ({ id, name, options, handleOnChange }) => (
-	<>
+	<div className='DropDown'>
 		<label htmlFor={id}>{name}</label>
 		<select id={id} aria-labelledby={id} onChange={(e) => handleOnChange(e.target.value)}>
 			{ Object.entries(options)
 				.map(([value, displayName]) => <option key={value} value={value}>{displayName}</option>)}
 		</select>
-	</>
+	</div>
 )
 
 DropDown.propTypes = {

@@ -14,9 +14,6 @@ describe('Header', () => {
 			</SortProvider>
 		)
 		expect(getByAltText('Catch')).toBeInTheDocument()
-		expect(getByText('Showing')).toBeInTheDocument()
-		expect(getByText('results')).toBeInTheDocument()
-		expect(getByText('Page of')).toBeInTheDocument()
 		expect(getByText('Sort By')).toBeInTheDocument()
 	})
 })
