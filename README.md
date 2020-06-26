@@ -1,7 +1,7 @@
 # Catch Code Challenge
 
 ## Introduction
-This is a code challenge I'm working on for Catch as part of the application process.
+This is a code challenge I worked on for Catch as part of the application process.
 
 Included in this README are instructions for running the application and unit tests, as well as a development log to showcase my progress and thinking throughout the challenge.
 
