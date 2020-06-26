@@ -7,7 +7,7 @@ const ProductListHeader = () => {
 
 	return (
 		<>
-			<div className='ProductListHeaderQuery'>
+			<div className='ProductListHeader-query'>
 				<div>{total} results for</div>
 				<div>&nbsp;&quot;{query}&quot;</div>
 			</div>

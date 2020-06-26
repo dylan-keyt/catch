@@ -1,3 +1,55 @@
 .ProductTile {
-  border: 1px solid grey;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.ProductTile-image-wrapper {
+  position: relative;
+}
+
+.ProductTile-image {
+  width: auto;
+}
+
+.ProductTile-sold-out {
+  background-color: grey;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0px 8px;
+}
+
+.ProductTile-details {
+  padding-top: 8px;
+  border-top: 1px solid lightgray;
+  text-align: center;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.ProductTile-name {
+  height: 55px;
+  font-size: 14px;
+}
+
+.ProductTile-retail-price {
+  margin-top: auto;
+  font-size: 12px;
+  text-decoration: line-through;
+}
+
+.ProductTile-sale-price {
+  margin-top: auto;
+  font-size: 24px;
+  font-weight: bold;
 }

@@ -25,7 +25,7 @@ const ProductList = () => {
 	return (
 		<>
 			<ProductListHeader />
-			<div className='ProductTileContainer'>
+			<div className='ProductList-container'>
 				{products.map((product) => (
 					<ProductTile
 						product={product}

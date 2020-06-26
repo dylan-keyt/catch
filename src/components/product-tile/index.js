@@ -7,12 +7,20 @@ const ProductTile = ({ product }) => {
 		id, name, salePrice, retailPrice, imageUrl, quantityAvailable,
 	} = product
 	return (
-		<div className="ProductTile" id={id}>
-			<img src={imageUrl} alt={name} />
-			{ !quantityAvailable && <div>Sold Out</div> }
-			<div>{name}</div>
-			{ !!retailPrice && <div>{retailPrice}</div> }
-			<div>{salePrice}</div>
+		<div className='ProductTile' id={id}>
+			<div className='ProductTile-image-wrapper'>
+				<img className='ProductTile-image' src={imageUrl} alt={name} />
+				{!quantityAvailable && (
+					<div className='ProductTile-sold-out'>Sold Out</div>
+				)}
+			</div>
+			<div className='ProductTile-details'>
+				<div className='ProductTile-name'>{name}</div>
+				{!!retailPrice && (
+					<div className='ProductTile-retail-price'>{retailPrice}</div>
+				)}
+				<div className='ProductTile-sale-price'>{salePrice}</div>
+			</div>
 		</div>
 	)
 }
