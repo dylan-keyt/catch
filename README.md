@@ -94,21 +94,28 @@ At this stage, I'm confident that I will finish the tests tomorrow morning, and 
 
 #### Time spent so far: 18 pomodoros (~9 hours)
 
-### Day 3 - Night
+### Day 2 - Night
 I decided to use eslint so I wouldn't have to worry about formatting everything at the last minute. After reviewing the specifications again, it seems that I missed a requirement about the metadata appearing in the header. This won't be difficult as I've already set up the API call, just need to handle it and add tests of course.
 
 #### Time spent so far: 20 pomodoros (~10 hours)
 
-### Day 4 - Morning
+### Day 3 - Morning
 I spent way too long on writing a good test for ProductList. I understand that the philosophy behind react-testing-library is just to test what you need, whatever's most useful to the user. I was having a lot of trouble with the async calls to getProducts, and unfortunately had to cut it short and mock those calls instead. In a real-world scenario, I would just ask someone about the best way to test what I have written.
 
 I'll proceed with the unit tests, and add the metadata handler when I get up to that part.
 
 #### Time spent so far: 24 pomodoros (~12 hours)
 
-### Day 4 - Afternoon
+### Day 3 - Afternoon
 I'm relieved to have finished the unit tests, and can now proceed with confidence. It gave me a chance to perform some refactors across the application, both big and small. Looking back, I can see some improvements that can be made throughout such as moving the metadata handler into its own context, or remove the sort context as it's just holding a single value. I'll keep them as-is for this project as it ended up being a good learning experience and opportunity to work with custom hooks.
 
 The main part to work on now involves styling the application. Hopefully I will finish this tomorrow and submit the project in time for the weekend.
 
 #### Time spent so far: 30 pomodoros (~15 hours)
+
+### Day 4 - Morning
+CSS is underway, and I was able to perform some small cleanup tasks as well. The main structure of the app and grid is complete, so I just need to refine the styles of the product tiles and app as a whole.
+
+I'm feeling confident I can finish this today. Looking forward to submitting the project.
+
+#### Time spent so far: 34 pomodoros (~17 hours)
