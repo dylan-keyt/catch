@@ -126,3 +126,14 @@ We're on the home stretch now! I was able to complete the styles for the product
 All that remains is to format the price and style the header. Then I will perform a final cleanup of the CSS and submit this challenge.
 
 #### Time spent so far: 38 pomodoros (~19 hours)
+
+### Day 4 - Evening
+Styling is complete, and so is this project. I wasn't able to finish it by COB Friday, but it is still done in time for the weekend.
+
+Looking back I can identify some things that would've been nice to have, such as configuring the icon on the drop down as per the design as well as a sticky header. However, with the amount of time I've spent on this challenge, I am satisfied with what I was able to achieve.
+
+I got to learn some cool things while working on this project, such as Context, react-testing-library and custom hooks. Most of all, I'm happy with the test coverage! In my mind, this is what makes the project truly complete and instead of something rushed together haphazardly, it is something that I can be proud of.
+
+I enjoyed this challenge, and I hope you enjoy reviewing it!
+
+#### Total time spent: 40 pomodoros (~20 hours)
