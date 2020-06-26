@@ -10,7 +10,7 @@ describe('Header', () => {
 				<ProductListHeader />
 			</ProductProvider>
 		)
-		expect(getByText('results for')).toBeInTheDocument()
+		expect(getByText('results for ""')).toBeInTheDocument()
 		expect(getByText('Page of')).toBeInTheDocument()
 	})
 })

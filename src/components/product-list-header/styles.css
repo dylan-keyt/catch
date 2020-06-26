@@ -1,4 +1,15 @@
+.ProductListHeader {
+  margin: 8px 0px;
+}
+
 .ProductListHeader-query {
   display: flex;
   flex-direction: row;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.ProductListHeader-pages {
+  font-size: 12px;
 }

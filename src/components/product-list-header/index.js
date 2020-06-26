@@ -6,15 +6,14 @@ const ProductListHeader = () => {
 	const { query, total, page, pages } = useProductState().metadata
 
 	return (
-		<>
+		<div className='ProductListHeader'>
 			<div className='ProductListHeader-query'>
-				<div>{total} results for</div>
-				<div>&nbsp;&quot;{query}&quot;</div>
+				{total} results for &quot;{query}&quot;
 			</div>
-			<div>
+			<div className='ProductListHeader-pages'>
 				Page {page} of {pages}
 			</div>
-		</>
+		</div>
 	)
 }
 
