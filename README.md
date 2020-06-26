@@ -119,3 +119,10 @@ CSS is underway, and I was able to perform some small cleanup tasks as well. The
 I'm feeling confident I can finish this today. Looking forward to submitting the project.
 
 #### Time spent so far: 34 pomodoros (~17 hours)
+
+### Day 4 - Afternoon
+We're on the home stretch now! I was able to complete the styles for the product tiles, and after changing the browser size a few times it seems to look OK. There were a few things to consider when writing the CSS, including the length of the product name and size of the image.
+
+All that remains is to format the price and style the header. Then I will perform a final cleanup of the CSS and submit this challenge.
+
+#### Time spent so far: 38 pomodoros (~19 hours)
