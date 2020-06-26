@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import './styles.css'
 import ProductTile from '../product-tile'
 import { getProducts, sortProducts } from '../../actions/product'
 import { useProductState, useProductDispatch } from '../../context/product'
@@ -22,10 +23,17 @@ const ProductList = () => {
 	}, [dispatch, products, sortMethod])
 
 	return (
-		<div className="ProductListContainer">
+		<>
 			<ProductListHeader />
-			{products.map((product) => <ProductTile product={product} key={product.id} />)}
-		</div>
+			<div className='ProductTileContainer'>
+				{products.map((product) => (
+					<ProductTile
+						product={product}
+						key={product.id}
+					/>
+				))}
+			</div>
+		</>
 	)
 }
 

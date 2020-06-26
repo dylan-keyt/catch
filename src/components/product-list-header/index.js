@@ -1,19 +1,20 @@
 import React from 'react'
+import './styles.css'
 import { useProductState } from '../../context/product'
 
 const ProductListHeader = () => {
 	const { query, total, page, pages } = useProductState().metadata
 
 	return (
-		<div>
-			<div>
+		<>
+			<div className='ProductListHeaderQuery'>
 				<div>{total} results for</div>
-				<div>{query}</div>
+				<div>&nbsp;&quot;{query}&quot;</div>
 			</div>
 			<div>
 				Page {page} of {pages}
 			</div>
-		</div>
+		</>
 	)
 }
 
