@@ -4,10 +4,20 @@ import PropTypes from 'prop-types'
 
 const DropDown = ({ id, name, options, handleOnChange }) => (
 	<div className='DropDown'>
-		<label htmlFor={id}>{name}</label>
-		<select id={id} aria-labelledby={id} onChange={(e) => handleOnChange(e.target.value)}>
-			{ Object.entries(options)
-				.map(([value, displayName]) => <option key={value} value={value}>{displayName}</option>)}
+		<label className='DropDown-label' htmlFor={id}>
+			{name}
+		</label>
+		<select
+			className='DropDown-select'
+			id={id}
+			aria-labelledby={id}
+			onChange={(e) => handleOnChange(e.target.value)}
+		>
+			{Object.entries(options).map(([value, displayName]) => (
+				<option key={value} value={value}>
+					{displayName}
+				</option>
+			))}
 		</select>
 	</div>
 )
